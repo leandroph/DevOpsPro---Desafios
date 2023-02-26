@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: root
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - pg-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: leandroph1992@hotmail.com
+      PGADMIN_DEFAULT_PASSWORD: teste
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+    driver: bridge
