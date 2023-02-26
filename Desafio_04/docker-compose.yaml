@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  redis:
+    image: redis
+    container_name: redisdb
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data:/data
+    networks:
+      - redis-network
+  
+  redis-commander:
+    image: rediscommander/redis-commander
+    container_name: redis-commander
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - REDIS_HOSTS=redisdb
+    networks:
+      - redis-network
+    
+
+networks:
+  redis-network:
+    driver: bridge
