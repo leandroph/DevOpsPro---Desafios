@@ -1,0 +1,3 @@
+[submodule "Desafio_06/Desafio_06/conversao-temperatura"]
+	path = Desafio_06/Desafio_06/conversao-temperatura
+	url = https://github.com/leandroph/DevOpsPro-Desafios.git
