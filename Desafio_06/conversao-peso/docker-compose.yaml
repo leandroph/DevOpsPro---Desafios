@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  conversaopeso:
+    image: conversaopeso
+    container_name: conversao-peso
+    build: 
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - 80:80
