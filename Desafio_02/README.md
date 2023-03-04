@@ -32,7 +32,7 @@ docker compose up -d
 ```
 
 <a name="acessando-app"></a>
-### 3. Acessar a Aplicação NodeJS:
+### 3. Acessar a Aplicação do PhpmyAdmin:
 
 1. Em seu navegador, de sua preferência, acesse a url `http://localhost:8080` para visualizar a Aplicação;
 
