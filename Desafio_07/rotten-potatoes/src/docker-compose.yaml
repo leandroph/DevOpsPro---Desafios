@@ -1,0 +1,60 @@
+version: '3.8'
+
+volumes:
+  mongo_potatoes_vol:
+
+networks:
+  potatoes_net:
+    name: potatoes_net
+    driver: bridge
+
+services:
+  rotten-potatoes:
+    image: rotten-potatoes
+    container_name: rotten-potatoes-2
+    ports:
+      - 5000:5000
+    networks:
+      - potatoes_net
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    depends_on:
+      - mongodb
+    environment:
+      MONGODB_DB: admin
+      MONGODB_HOST: mongodb
+      MONGODB_PORT: 27017
+      MONGODB_USERNAME: mongouser
+      MONGODB_PASSWORD: mongopwd
+
+  mongodb:
+    image: mongo:6.0.2
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    networks:
+      - potatoes_net
+    volumes:
+      - mongo_potatoes_vol:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopwd
+  
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    networks:
+      - potatoes_net
+    depends_on:
+      - mongodb
+    restart: always  
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: user
+      ME_CONFIG_BASICAUTH_PASSWORD: mongopwd
+      ME_CONFIG_MONGODB_URL: "mongodb://mongouser:mongopwd@mongodb:27017/"
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      ME_CONFIG_SITE_COOKIESECRET: cookiesecret
+      ME_CONFIG_SITE_SESSIONSECRET: sessionsecret
