@@ -11,7 +11,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina os seguintes
 
 ## Executando o Projeto:
 
-Para testarmos a aplicação, temos que executar os N passos a seguir:
+Para testarmos a aplicação, temos que executar os passos a seguir:
 
 1. [Fazer download do Projeto](#download-github)
 2. [Executar Docker Compose](#docker-compose)
@@ -38,4 +38,4 @@ docker compose up -d
 
 2. Se os passos anteriores foram executados corretamente, a resposta será semelhante a tela abaixo:
 
-![alt text](images/phpadmin.png)
+![alt text](images/pgAdmin.png)
