@@ -35,8 +35,8 @@ docker compose up -d
 <a name="acessando-app"></a>
 ### 3. Acessar a Aplicação do PhpmyAdmin:
 
-1. Em seu navegador, de sua preferência, acesse a url `http://localhost:8080` para visualizar a Aplicação;
+1. Em seu navegador, de sua preferência, acesse a url `http://localhost:8081` para visualizar a Aplicação;
 
 2. Se os passos anteriores foram executados corretamente, a resposta será semelhante a tela abaixo:
 
-![alt text](images/mongo-express.png
+![alt text](images/mongo-express.png)
