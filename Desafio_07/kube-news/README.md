@@ -1,15 +1,41 @@
-# Projeto kube-news
+# Desafio 07 - Projeto kube-news
 
-### Objetivo
 O projeto Kube-news é uma aplicação escrita em NodeJS e tem como objetivo ser uma aplicação de exemplo pra trabalhar com o uso de containers.
 
-### Configuração
-Pra configurar a aplicação, é preciso ter um banco de dados Postgre e pra definir o acesso ao banco, configure as variáveis de ambiente abaixo:
+## Requisitos do Projeto:
 
-DB_DATABASE => Nome do banco de dados que vai ser usado.
+Antes de começar, você vai precisar ter instalado em sua máquina os seguintes recursos:
 
-DB_USERNAME => Usuário do banco de dados.
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://docs.docker.com/get-docker/)
 
-DB_PASSWORD => Senha do usuário do banco de dados.
+## Executando o Projeto:
 
-DB_HOST => Endereço do banco de dados.
+Para testarmos a aplicação, temos que executar os passos a seguir:
+
+1. [Fazer download do Projeto](#download-github)
+2. [Executar Docker Compose](#docker-compose)
+3. [Acessar a Aplicação](#acessando-app)
+
+<a name="download-github"></a>
+### 1. Fazer download do Projeto:
+ 1. Baixe este Repositório, executando o comando Git:
+```bash
+git clone https://github.com/leandroph/DevOpsPro-Desafios.git
+```
+
+<a name="docker-compose"></a>
+### 1. Fazer downloa do do Projeto:
+1. Acesar o diretório `Desafio_07/kube-news/src`, executar o compando:
+```bash
+docker compose up -d
+```
+
+<a name="acessando-app"></a>
+### 3. Acessar a Aplicação do Redis Commander:
+
+1. Em seu navegador, de sua preferência, acesse a url `http://localhost:8080` para visualizar a Aplicação;
+
+2. Se os passos anteriores foram executados corretamente, a resposta será semelhante a tela abaixo:
+
+![alt text](images/kube-news.png)
